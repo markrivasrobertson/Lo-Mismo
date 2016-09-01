@@ -1,0 +1,63 @@
+#containerOne {
+	width: 35rem;
+	height: 23rem;
+	border: 2px solid blue;
+	border-radius: 8px;
+}
+.die {
+	display: inline-block;
+	margin: 10px 10px 5px 10px;
+	width: 10rem;
+	height: 10rem;
+	border-radius: 5px;
+	background: rgba(0,0,255,.8);
+}
+.pip {
+	position: relative;
+	display: inline-block;
+	float: left;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 50%;
+	margin: .65rem;
+}
+.empty {
+	background: rgba(0,0,255,0);
+}
+.filled {
+	position: relative;
+	display: inline-block;
+	background: rgba(220,220,220,1); 
+}
+
+/*STYLING FOR A 0NE FACE*/
+.die1 .pip4 {
+	background: rgba(220,220,220,1)
+}
+
+/*STYLING FOR A TWO FACE*/
+.die2 .pip0, .die2 .pip8  {
+	background: rgba(220,220,220,1)
+}
+
+/*STYLING FOR A THREE FACE*/
+.die3 .pip0, .die3 .pip4, .die3 .pip8 {
+	background: rgba(220,220,220,1)
+}
+
+/*STYLING FOR A FOUR FACE*/
+.die4 .pip0, .die4 .pip2, .die4 .pip6, .die4 .pip8 {
+	background: rgba(220,220,220,1)
+}
+
+/*STYLING FOR A FIVE FACE*/
+.die5 .pip0, .die5 .pip2, .die5 .pip4, .die5 .pip6, .die5 .pip8 {
+	background: rgba(220,220,220,1)
+}
+
+/*STYLING FOR A SIX FACE*/
+.die6 .pip0, .die6 .pip2, .die6 .pip3, .die6 .pip5, .die6 .pip6, .die6 .pip8 {
+	background: rgba(220,220,220,1)
+}
+
+
