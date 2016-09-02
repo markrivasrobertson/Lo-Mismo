@@ -33,14 +33,10 @@ class Game {
 		}
 		let outcome;
 		count < this.currentInstances ? outcome = 'You called it!' : outcome = 'Tough break, hombre!';
-		// for (let i = 0; i < this.allDiceInPlay.length; i++) {
-	 //        if (this.allDiceInPlay[i] === faceValue) {
-	 //            count++;
-	 //        }
-	 //    }
-	 //    let outcome;
-	 //    count < instances ? outcome = 'You called it!' : outcome = 'Tough break, hombre!';
 	    alert(outcome);
+	}
+	consoleItBaby() {
+		console.log('this click');
 	}
 }
 // const bob = new Game(6);

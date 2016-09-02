@@ -13,12 +13,33 @@ class Die {
 		document.getElementById(this.hand).appendChild(this.el);
 	}
 }
+class WagerDie {
+	constructor(value, game) {
+		this.el = document.createElement('div');
+		this.el.setAttribute('class', `wagerDie die${value}`);
+		this.value = value;
+		this.game = game;
+		for (let i = 0; i<9; i++) {
+			let pip = document.createElement('div');
+			pip.setAttribute('class', `pip pip${i}`);
+			this.el.appendChild(pip);
+		}
+	}
+	render() {
+		this.el.addEventListener('click', this.game.consoleItBaby);
+		document.getElementById('wagerBoard').appendChild(this.el);
+	}
+	select() {
+		console.log(this.el);
+	}
+}
 class Hand {
-	constructor(arr) {
+	constructor(name, location) {
 		this.el = document.createElement('div');
 		// this.name = name;
 		// this.el.setAttribute('id', this.name);
 		this.el.setAttribute('class', 'hand')
+		this.el.setAttribute('id', name)
 		document.getElementById('board').appendChild(this.el);
 		
 		// this.arr = arr;
@@ -29,7 +50,6 @@ class Hand {
 	}
 
 }
-
 // class Hand {
 // 	constructor(arr, player) {
 // 		this.el = document.createElement('div');

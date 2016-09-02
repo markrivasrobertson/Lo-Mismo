@@ -4,5 +4,9 @@ class App {
 	    this.gameView = new GameView(this.game, diceNumber);
 	}
 }
-// let startUp = new App(6);
-// startUp.game.newRound();
+let startUp = new App(6);
+startUp.game.newRound();
+startUp.gameView.makeHand();
+startUp.gameView.makeWagerBoard();
+
+// startUp.gameView.makeWagerMachine();

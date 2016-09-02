@@ -1,25 +1,69 @@
-#containerOne {
-	width: 35rem;
-	height: 23rem;
-	border: 2px solid blue;
+body {
+	background-image: url('background.jpg');
+	background-size: cover;
+}
+
+.hand {
+	display: inline-block;
+	/*float left;*/
+	width: 26rem;
+	padding: 2rem;
+	height: 30rem;
 	border-radius: 8px;
+	margin: 0, 6rem, 0, 2rem;
+}
+#playerHand {
+	float: left;
+}
+#computerHand {
+	float: right;
+}
+#wagerBoard {
+	display: block;
+	clear: both;
+	margin: 0 auto;
+	padding: 3rem;
+}
+.playerHand {
+	background: rgba(0,0,200,.6);
+}
+.computerHand {
+	background: rgba(200,0,0,.6);
+	display: hidden;
+	float: right;
 }
 .die {
 	display: inline-block;
-	margin: 10px 10px 5px 10px;
-	width: 10rem;
-	height: 10rem;
-	border-radius: 5px;
-	background: rgba(0,0,255,.8);
+	margin: 8px 8px 4px 8px;
+	width: 8rem;
+	height: 8rem;
+	border-radius: 10%;
 }
 .pip {
 	position: relative;
 	display: inline-block;
 	float: left;
-	height: 2rem;
-	width: 2rem;
+	height: 1.6rem;
+	width: 1.6rem;
 	border-radius: 50%;
-	margin: .65rem;
+	margin: .52rem;
+}
+.wagerDie {
+	display: inline-block;
+	margin: 5px 5px 2.5px 5px;
+	width: 5rem;
+	height: 5rem;
+	border-radius: 10%;
+	background: rgba(45,45,45,.9);
+}
+.wagerDie .pip {
+	position: relative;
+	display: inline-block;
+	float: left;
+	height: 1rem;
+	width: 1rem;
+	border-radius: 50%;
+	margin: .33rem;
 }
 .empty {
 	background: rgba(0,0,255,0);
@@ -60,4 +104,25 @@
 	background: rgba(220,220,220,1)
 }
 
+.die6 {
+	animation: blinker 1.5s linear infinite;
+}
 
+@keyframes blinker {  
+  	50% { 
+  		background: rgba(255,255,255,.6); 
+  	}
+}
+
+/*
+#popps {
+  height: 100px;
+  width: 100px;
+  background: rgb(255,255,0);
+  border-radius: 50%;
+  animation: blinker 1.5s linear infinite;
+}
+@keyframes blinker {  
+  50% { background: rgb(75,75,75); }
+}
+*/
