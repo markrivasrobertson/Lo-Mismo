@@ -17,7 +17,6 @@ class Game {
 		this.bluffIsCalled = false;
 	}
 	newRound() {
-		console.log('newround');
 		const roll = new diceRoll(this.computerDice, this.playerDice);
 		roll.rollTheDice();
 		this.needReRender = true;
@@ -36,7 +35,6 @@ class Game {
 		if (faceValue===this.currentFaceValue && instances<=this.currentInstances || faceValue<this.currentFaceValue){
 			alert('Sorry, that\'s not a legal wager, you must raise to a higher face value or a higher number of appearances');
 		} else {
-		console.log('wager')
 		this.currentInstances = instances;
 		this.currentFaceValue = faceValue;
 		this.currentMove++;
@@ -44,7 +42,6 @@ class Game {
 		}
 	}
 	computerMove() {
-		console.log('computermove')
 		let checkDecisicion = this.computerMoveDecider.decideMove(this.currentInstances, this.currentFaceValue);
 		if (checkDecisicion) {
 			let faces = this.computerMoveDecider.wagerFaceValueChoice(this.currentInstances, this.currentFaceValue);
@@ -55,9 +52,6 @@ class Game {
 			this.bluffIsCalled = true;
 		}
 		this.needReRender = true;
-	}
-	gameOver() {
-		console.log('game over');
 	}
 	check() {
 		console.log('check')

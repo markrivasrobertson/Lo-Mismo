@@ -1,5 +1,3 @@
-
-
 class GameView {
 	constructor(game) {
 		this.el = document.createElement('div');
@@ -156,13 +154,11 @@ class GameView {
 		this.pendingDie = faceValue;
 	}
 	clearPending() {
-		console.log('holy');
 		document.getElementById('pendingInstances').remove();
 		document.getElementById('pendingDie').remove();
 		this.setInitialPendingWager();
 	}
 	clearWager() {
-		console.log('holier');
 		document.getElementById('pendingInstances').remove();
 		document.getElementById('pendingDie').remove();
 		document.getElementById('lastInstanceWager').remove();
