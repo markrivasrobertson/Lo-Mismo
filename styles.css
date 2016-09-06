@@ -1,16 +1,27 @@
 body {
-	background-image: url('background.jpg');
+	background: rgba(45,122,45,1);
 	background-size: cover;
+	color: rgba(220,220,220,1);
+	font-family: Helvetica, sans-serif;
+	font-size: 1.3em;
 }
-
+span {
+	color: rgba(220,60,60,1);
+}
+ul {
+	background: rgba(0,0,0,.6);
+	list-style: none;
+}
+ul li {
+	margin: 1em 0 0 0;
+}
 .hand {
 	display: inline-block;
-	/*float left;*/
-	width: 26rem;
-	padding: 2rem;
-	height: 30rem;
+	width: 28rem;
+	padding-left: 2rem;
+	height: 14rem;
 	border-radius: 8px;
-	margin: 0, 6rem, 0, 2rem;
+	margin: 0;
 }
 #playerHand {
 	float: left;
@@ -18,11 +29,86 @@ body {
 #computerHand {
 	float: right;
 }
-#wagerBoard {
+#covering {
+	width: 28rem;
+	padding-left: 2rem;
+	height: 14rem;
+	border-radius: 8px;
+	margin: 0;
+	position: absolute;
+	right: 0rem;
+	background: rgba(200,0,0,1);
+	z-index: 1;
+}
+#currentWager {
 	display: block;
 	clear: both;
-	margin: 0 auto;
+	padding: 2rem;
+}
+#wagerMachineInstances {
+	display: inline-block;
 	padding: 3rem;
+	width: 50%;
+	box-sizing: border-box;
+}
+#wagerMachineDice {
+	display: inline-block;
+	clear: both;
+	width: 50%;
+	margin: 0;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+#buttonWrapper {
+	display: inline-block;
+	width: 50%;
+	float: right;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 5rem 1rem 0 1rem;
+	clear: right;
+	position: relative;
+}
+#pendingWager {
+	display: inline-block;
+	width: 50%;
+	float: right;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 2rem;
+	clear: both;
+	position: relative;
+}
+#pendingInstances, #pendingFaceValue {
+	display: inline-block;
+	float: right;
+	position: relative;
+	margin: 0 2rem 0 2rem;
+}
+#wagerButton {
+	color: rgba(220,220,220,1);
+	background: rgba(45,45,45,1);
+	width: 50%;
+	height: 2rem;
+	font-size: 1.3rem;
+	margin: 0 auto;
+	display: block;
+}
+#bluffButton {
+	color: rgba(220,220,220,1);
+	background: rgba(45,45,45,1);
+	width: 50%;
+	height: 2rem;
+	font-size: 1.3rem;
+	margin: 4rem auto;
+	display: block;
+}
+#startButton {
+	width: 50%;
+	height: 3rem;
+	background: rgba(220,0,0,.7);
+	margin: 0 auto;
+	display: block;
 }
 .playerHand {
 	background: rgba(0,0,200,.6);
@@ -32,27 +118,37 @@ body {
 	display: hidden;
 	float: right;
 }
+.instanceCircle {
+	height: 5rem;
+	width: 5rem;
+	border-radius: 50%;
+	background: rgba(45,45,45,.9);
+	color: rgba(220,220,220,1);
+	display: inline-block;
+	text-align: center;
+	font-size: 1.4em;
+}
 .die {
 	display: inline-block;
-	margin: 8px 8px 4px 8px;
-	width: 8rem;
-	height: 8rem;
+	margin: 6px 6px 3px 6px;
+	width: 6rem;
+	height: 6rem;
 	border-radius: 10%;
 }
 .pip {
 	position: relative;
 	display: inline-block;
 	float: left;
-	height: 1.6rem;
-	width: 1.6rem;
+	height: 1.2rem;
+	width: 1.2rem;
 	border-radius: 50%;
-	margin: .52rem;
+	margin: .39rem;
 }
 .wagerDie {
 	display: inline-block;
-	margin: 5px 5px 2.5px 5px;
-	width: 5rem;
-	height: 5rem;
+	margin: 4px 4px 2px 4px;
+	width: 4rem;
+	height: 4rem;
 	border-radius: 10%;
 	background: rgba(45,45,45,.9);
 }
@@ -60,10 +156,10 @@ body {
 	position: relative;
 	display: inline-block;
 	float: left;
-	height: 1rem;
-	width: 1rem;
+	height: .8rem;
+	width: .8rem;
 	border-radius: 50%;
-	margin: .33rem;
+	margin: .24rem;
 }
 .empty {
 	background: rgba(0,0,255,0);
@@ -73,56 +169,27 @@ body {
 	display: inline-block;
 	background: rgba(220,220,220,1); 
 }
-
 /*STYLING FOR A 0NE FACE*/
 .die1 .pip4 {
 	background: rgba(220,220,220,1)
 }
-
 /*STYLING FOR A TWO FACE*/
 .die2 .pip0, .die2 .pip8  {
 	background: rgba(220,220,220,1)
 }
-
 /*STYLING FOR A THREE FACE*/
 .die3 .pip0, .die3 .pip4, .die3 .pip8 {
 	background: rgba(220,220,220,1)
 }
-
 /*STYLING FOR A FOUR FACE*/
 .die4 .pip0, .die4 .pip2, .die4 .pip6, .die4 .pip8 {
 	background: rgba(220,220,220,1)
 }
-
 /*STYLING FOR A FIVE FACE*/
 .die5 .pip0, .die5 .pip2, .die5 .pip4, .die5 .pip6, .die5 .pip8 {
 	background: rgba(220,220,220,1)
 }
-
 /*STYLING FOR A SIX FACE*/
 .die6 .pip0, .die6 .pip2, .die6 .pip3, .die6 .pip5, .die6 .pip6, .die6 .pip8 {
 	background: rgba(220,220,220,1)
 }
-
-.die6 {
-	animation: blinker 1.5s linear infinite;
-}
-
-@keyframes blinker {  
-  	50% { 
-  		background: rgba(255,255,255,.6); 
-  	}
-}
-
-/*
-#popps {
-  height: 100px;
-  width: 100px;
-  background: rgb(255,255,0);
-  border-radius: 50%;
-  animation: blinker 1.5s linear infinite;
-}
-@keyframes blinker {  
-  50% { background: rgb(75,75,75); }
-}
-*/
